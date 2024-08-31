@@ -33,7 +33,7 @@ const productos = [
         nombre: "Reloj Deportivo",
         precio: 89.99,
         cantidadDisponible: 7,
-       imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/5.jpg"
+       imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/5.jpeg"
     },
     {
         id: 6,
