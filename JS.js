@@ -2,57 +2,57 @@
 const productos = [
     {
         id: 1,
-        nombre: "Camiseta Blanca",
-        precio: 150.00,
+        nombre: "Apple Mac",
+        precio: 1499.99,
         cantidadDisponible: 10,
         imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/1.webp"
     },
     {
         id: 2,
-        nombre: "Zapatos Deportivos",
-        precio: 19.99,
+        nombre: "Apple iPhone",
+        precio: 1259.99,
         cantidadDisponible: 5,
         imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/2.jpeg"
     },
     {
         id: 3,
-        nombre: "Mochila Escolar",
-        precio: 79.99,
+        nombre: "Cámara Sony",
+        precio: 89.99,
         cantidadDisponible: 7,
        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/3.jpeg"
     },
     {
         id: 4,
-        nombre: "Gafas de Sol",
-        precio: 120.99,
+        nombre: "Apple iPad",
+        precio: 890.99,
         cantidadDisponible: 7,
         imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/4.jpg"
     },
     {
         id: 5,
-        nombre: "Reloj Deportivo",
-        precio: 89.99,
+        nombre: "Audífonos Sony",
+        precio: 189.99,
         cantidadDisponible: 7,
        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/5.jpeg"
     },
     {
         id: 6,
-        nombre: "Auriculares Inalámbricos",
-        precio: 59.99,
+        nombre: "Samsung Galaxy S24 Ultra",
+        precio: 1249.99,
         cantidadDisponible: 7,
         imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/6.webp"
     },
     {
         id: 7,
-        nombre: "Bolso de Mano",
-        precio: 129.99,
+        nombre: "Samsung Galaxy Z Flip5",
+        precio: 849.99,
         cantidadDisponible: 7,
         imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/7.webp"
     },
     {
         id: 8,
-        nombre: "Producto 8",
-        precio: 120.99,
+        nombre: "Samsung Galaxy S23 FE",
+        precio: 520.99,
         cantidadDisponible: 7,
         imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/8.jpeg"
     }
