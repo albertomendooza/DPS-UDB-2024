@@ -2,35 +2,73 @@
 const productos = [
     {
         id: 1,
-        nombre: "Producto 1",
+        nombre: "Camiseta Blanca",
         precio: 150.00,
         cantidadDisponible: 10,
-        imagen: "images/Producto 1.jpg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/imagen/1.jpg"
     },
     {
         id: 2,
-        nombre: "Producto 2",
+        nombre: "Zapatos Deportivos",
         precio: 19.99,
         cantidadDisponible: 5,
-        imagen: "images/Producto 2.jpg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/imagen/2.jpg"
     },
     {
         id: 3,
-        nombre: "Producto 3",
+        nombre: "Mochila Escolar",
         precio: 79.99,
         cantidadDisponible: 7,
-        imagen: "images/Producto 3.jpg"
+       imagen: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/imagen/3.jpg"
+    },
+    {
+        id: 4,
+        nombre: "Gafas de Sol",
+        precio: 120.99,
+        cantidadDisponible: 7,
+        imagen: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/imagen/4.jpg"
+    },
+    {
+        id: 5,
+        nombre: "Reloj Deportivo",
+        precio: 89.99,
+        cantidadDisponible: 7,
+       imagen: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/imagen/5.jpg"
+    },
+    {
+        id: 6,
+        nombre: "Auriculares Inalámbricos",
+        precio: 59.99,
+        cantidadDisponible: 7,
+        imagen: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/imagen/6.jpg"
+    },
+    {
+        id: 7,
+        nombre: "Bolso de Mano",
+        precio: 129.99,
+        cantidadDisponible: 7,
+        imagen: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/imagen/7.jpg"
+    },
+    {
+        id: 8,
+        nombre: "Producto 8",
+        precio: 120.99,
+        cantidadDisponible: 7,
+        imagen: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/imagen/8.jpg"
     }
+    
 ];
 
 let carrito = [];
 
 // Renderiza los productos en la página
 function renderizarProductos() {
-    const productList = document.getElementById('product-list');
+    const productList = document.getElementById('productos');
+    productList.innerHTML = ''; // Limpiar la lista antes de agregar productos
+
     productos.forEach(producto => {
         const productCard = document.createElement('div');
-        productCard.className = 'col-md-4 product';
+        productCard.className = 'col-md-4 producto';
         productCard.innerHTML = `
             <div class="card">
                 <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
@@ -69,7 +107,7 @@ function agregarAlCarrito(productId) {
 
 // Actualiza el carrito de compras
 function actualizarCarrito() {
-    const cartItems = document.getElementById('cart-items');
+    const cartItems = document.getElementById('carrito');
     cartItems.innerHTML = '';
     let total = 0;
 
@@ -86,7 +124,7 @@ function actualizarCarrito() {
         total += producto.precio * producto.cantidad;
     });
 
-    document.getElementById('cart-total').textContent = total.toFixed(2);
+    document.getElementById('total').textContent = total.toFixed(2);
 }
 
 // Elimina un producto del carrito
@@ -100,44 +138,19 @@ function eliminarDelCarrito(productId) {
     renderizarProductos();
 }
 
-// Finaliza la compra y muestra la factura
-document.getElementById('checkout').addEventListener('click', function() {
-    const invoiceItems = document.getElementById('invoice-items');
-    invoiceItems.innerHTML = '';
-    let total = 0;
 
-    carrito.forEach(producto => {
-        const invoiceItem = document.createElement('li');
-        invoiceItem.className = 'list-group-item invoice-item';
-        invoiceItem.innerHTML = `
-            <span>${producto.nombre} - ${producto.cantidad} x $${producto.precio.toFixed(2)}</span>
-            <span>$${(producto.precio * producto.cantidad).toFixed(2)}</span>
-        `;
-        invoiceItems.appendChild(invoiceItem);
+document.getElementById('pagar').addEventListener('click', function() {
+    if (carrito.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+    }
 
-        total += producto.precio * producto.cantidad;
-    });
-
-    const impuesto = total * 0.15;
-    total += impuesto;
-
-    const taxItem = document.createElement('li');
-    taxItem.className = 'list-group-item invoice-item';
-    taxItem.innerHTML = `<span>Impuesto (15%)</span><span>$${impuesto.toFixed(2)}</span>`;
-    invoiceItems.appendChild(taxItem);
-
-    document.getElementById('invoice-total').textContent = total.toFixed(2);
-
-    document.getElementById('invoice').classList.remove('d-none');
+    alert('Pago realizado con éxito.');
     carrito = [];
     actualizarCarrito();
-});
-
-// Permite al usuario seguir comprando después de ver la factura
-document.getElementById('continue-shopping').addEventListener('click', function() {
-    document.getElementById('invoice').classList.add('d-none');
     renderizarProductos();
 });
+
 
 // Inicializa la tienda
 renderizarProductos();

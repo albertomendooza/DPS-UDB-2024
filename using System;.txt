@@ -1,0 +1,142 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Collections.Generic;
+
+namespace Ejemplo3
+{
+    public partial class Form1 : Form
+    {
+        private List<Point> worm; // Lista de puntos que representa el cuerpo del gusano
+        private Point food; // Posición del objeto a atrapar
+        private Random random; // Generador de números aleatorios
+        private int stepSize = 10; // Tamaño de paso del gusano
+        private int score = 0; // Puntuación del jugador
+
+        private enum Direction
+        {
+            Left, Right, Up, Down
+        }
+        private Direction direction; // Dirección actual del gusano
+
+        public Form1()
+        {
+            InitializeComponent();
+            InitializeGame();
+        }
+
+        private void InitializeGame()
+        {
+            worm = new List<Point>(); // Inicializa la lista del gusano
+            worm.Add(new Point(50, 50)); // Agrega la cabeza del gusano
+            direction = Direction.Right; // Dirección inicial del gusano
+            random = new Random(); // Inicializa el generador de números aleatorios
+            GenerateFood(); // Genera un objeto para atrapar
+            timer1.Start(); // Inicia el temporizador del juego
+        }
+
+        private void GenerateFood()
+        {
+            int maxX = ClientSize.Width / stepSize;
+            int maxY = ClientSize.Height / stepSize;
+            food = new Point(random.Next(0, maxX) * stepSize, random.Next(0, maxY) * stepSize);
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.Red, food.X, food.Y, stepSize, stepSize); // Dibuja el objeto a atrapar
+            foreach (Point part in worm)
+            {
+                e.Graphics.FillRectangle(Brushes.Green, part.X, part.Y, stepSize, stepSize); // Dibuja el cuerpo del gusano
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    if (direction != Direction.Right)
+                        direction = Direction.Left;
+                    break;
+                case Keys.Right:
+                    if (direction != Direction.Left)
+                        direction = Direction.Right;
+                    break;
+                case Keys.Up:
+                    if (direction != Direction.Down)
+                        direction = Direction.Up;
+                    break;
+                case Keys.Down:
+                    if (direction != Direction.Up)
+                        direction = Direction.Down;
+                    break;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            MoveWorm(); // Mueve el gusano
+            CheckCollision(); // Verifica colisiones
+            Invalidate(); // Invalida el área del formulario para que se vuelva a dibujar
+        }
+
+        private void MoveWorm()
+        {
+            Point newHead = worm[0]; // Obtiene la posición de la cabeza del gusano
+            switch (direction)
+            {
+                case Direction.Left:
+                    newHead.X -= stepSize;
+                    break;
+                case Direction.Right:
+                    newHead.X += stepSize;
+                    break;
+                case Direction.Up:
+                    newHead.Y -= stepSize;
+                    break;
+                case Direction.Down:
+                    newHead.Y += stepSize;
+                    break;
+            }
+            worm.Insert(0, newHead); // Inserta la nueva cabeza del gusano
+
+            // Comprueba si el gusano ha atrapado el objeto
+            if (newHead == food)
+            {
+                GenerateFood(); // Genera un nuevo objeto
+                score++; // Incrementa la puntuación
+            }
+            else
+            {
+                worm.RemoveAt(worm.Count - 1); // Elimina la cola del gusano si no ha atrapado un objeto
+            }
+        }
+
+        private void CheckCollision()
+        {
+            // Verifica si el gusano ha chocado con las paredes
+            if (worm[0].X < 0 || worm[0].X >= ClientSize.Width || worm[0].Y < 0 || worm[0].Y >= ClientSize.Height)
+            {
+                GameOver();
+            }
+
+            // Verifica si el gusano ha chocado consigo mismo
+            for (int i = 1; i < worm.Count; i++)
+            {
+                if (worm[0] == worm[i])
+                {
+                    GameOver();
+                    break;
+                }
+            }
+        }
+
+        private void GameOver()
+        {
+            timer1.Stop(); // Detiene el temporizador
+            MessageBox.Show("Game Over! Your Score: " + score); // Muestra un mensaje de fin de juego
+            InitializeGame(); // Reinicia el juego
+        }
+    }
+}

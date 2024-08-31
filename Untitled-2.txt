@@ -1,0 +1,54 @@
+
+create database desafio1;
+
+use desafio1;
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+DROP TABLE IF EXISTS `paciente`;
+CREATE TABLE IF NOT EXISTS paciente (
+  id_paciente int NOT NULL AUTO_INCREMENT,
+  nombre varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  apellido varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  genero varchar(10) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  presion varchar(15) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  tipo_sangre char(3) COLLATE 
+utf8mb4_spanish2_ci DEFAULT NULL,
+  PRIMARY KEY (id_paciente)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+
+INSERT INTO `paciente` (`id_paciente`, `nombre`, `apellido`, `genero`, `presion`, `tipo_sangre`) VALUES
+(1, 'Maria', 'Barbosa', 'Femenino', 'Baja', 'A+'),
+(2, 'Roberto', 'Mendez', 'Masculino', 'Media', 'O'),
+(3, 'Matias', 'Mrroquin', 'Masculino', 'Media', 'AB+'),
+(4, 'Katherine', 'Vasquez', 'Femenino', 'Baja', 'A+'),
+(5, 'Jeny', '', 'Velazco', 'Femenino','Alta', 'AB-'),
+(6, 'Carolina', 'Ayala', 'Femenino', 'Media', 'O'),
+(7, 'Felipe', 'Gomez', 'Masculino', 'Alta', 'B-'),
+(8, 'Lidia', 'Trejo', 'Femenino', 'Baja', 'AB+'),
+(9, 'Adriana', 'Escobar', 'Femenino', 'Alta', 'A+'),
+(10, 'Luz', 'Barahona', 'Femenino', 'Media', 'AB+');
+
+
+
+
+DROP TABLE IF EXISTS usuario;
+CREATE TABLE IF NOT EXISTS usuario (
+  id_usuario int NOT NULL AUTO_INCREMENT,
+  usuario varchar(50) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  pass varchar(100) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  PRIMARY KEY (id_usuario)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+
+INSERT INTO usuario (id_usuario, usuario, pass) VALUES
+(4, 'Yoshi', '1234'),
+(3, 'Jin', '1234'),
+(5, 'Mei', '1234'),
+(6, 'Lu', '1234'),
+(7, 'Mia', '1234'),
+(8, 'Ros', '1234');
+COMMIT;
