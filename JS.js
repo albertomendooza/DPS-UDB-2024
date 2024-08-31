@@ -5,7 +5,7 @@ const productos = [
         nombre: "Camiseta Blanca",
         precio: 150.00,
         cantidadDisponible: 10,
-        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+        imagen: "/img/1.webp"
     },
     {
         id: 2,
