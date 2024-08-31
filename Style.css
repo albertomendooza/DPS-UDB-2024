@@ -10,6 +10,7 @@ h1, h2 {
 
 #productos {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -19,20 +20,16 @@ h1, h2 {
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 200px;
 }
 
-.btn-agregar {
-    background: #28a745;
+.btn-primary {
+    background: #007bff;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.btn-agregar:hover {
-    background: #218838;
+.btn-primary:hover {
+    background: #0056b3;
 }
 
 #carrito {
@@ -41,4 +38,80 @@ h1, h2 {
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+    border: none;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    padding: 50px 0;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-bottom: 40px; /* Espacio entre el banner y el resto del contenido */
+}
+
+/* Estilo del título dentro del banner */
+.titulo-principal {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    color: rgb(117, 56, 56);
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.titulo-principal::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(8, 8, 8, 0.3);
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 1;
+}
+
+.titulo-principal::after {
+    content: 'Bienvenidos';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: #8d4444;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
 }
