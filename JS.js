@@ -12,21 +12,21 @@ const productos = [
         nombre: "Zapatos Deportivos",
         precio: 19.99,
         cantidadDisponible: 5,
-        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+        imagen: "/main/img/3.jpeg"
     },
     {
         id: 3,
         nombre: "Mochila Escolar",
         precio: 79.99,
         cantidadDisponible: 7,
-       imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+       imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/3.jpeg"
     },
     {
         id: 4,
         nombre: "Gafas de Sol",
         precio: 120.99,
         cantidadDisponible: 7,
-        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+        imagen: "/img/3.jpeg"
     },
     {
         id: 5,
