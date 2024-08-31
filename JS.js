@@ -5,56 +5,56 @@ const productos = [
         nombre: "Camiseta Blanca",
         precio: 150.00,
         cantidadDisponible: 10,
-        img: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/img/1.jpg"
+        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
     },
     {
         id: 2,
         nombre: "Zapatos Deportivos",
         precio: 19.99,
         cantidadDisponible: 5,
-        img: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/img/2.jpg"
+        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
     },
     {
         id: 3,
         nombre: "Mochila Escolar",
         precio: 79.99,
         cantidadDisponible: 7,
-       img: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/img/3.jpg"
+       imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
     },
     {
         id: 4,
         nombre: "Gafas de Sol",
         precio: 120.99,
         cantidadDisponible: 7,
-        img: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/img/4.jpg"
+        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
     },
     {
         id: 5,
         nombre: "Reloj Deportivo",
         precio: 89.99,
         cantidadDisponible: 7,
-       img: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/img/5.jpg"
+       imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
     },
     {
         id: 6,
         nombre: "Auriculares Inalámbricos",
         precio: 59.99,
         cantidadDisponible: 7,
-        img: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/img/6.jpg"
+        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
     },
     {
         id: 7,
         nombre: "Bolso de Mano",
         precio: 129.99,
         cantidadDisponible: 7,
-        img: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/img/7.jpg"
+        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
     },
     {
         id: 8,
         nombre: "Producto 8",
         precio: 120.99,
         cantidadDisponible: 7,
-        img: "https://raw.githubusercontent.com/albertomendooza/https://github.com/albertomendooza/DPS-UDB-2024.git/main/img/8.jpg"
+        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
     }
     
 ];
@@ -71,7 +71,7 @@ function renderizarProductos() {
         productCard.className = 'col-md-4 producto';
         productCard.innerHTML = `
             <div class="card">
-                <img src="${producto.img}" class="card-img-top" alt="${producto.nombre}">
+                <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
                 <div class="card-body">
                     <h5 class="card-title">${producto.nombre}</h5>
                     <p class="card-text">$${producto.precio.toFixed(2)}</p>
@@ -154,3 +154,4 @@ document.getElementById('pagar').addEventListener('click', function() {
 
 // Inicializa la tienda
 renderizarProductos();
+-------
