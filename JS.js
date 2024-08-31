@@ -5,14 +5,14 @@ const productos = [
         nombre: "Camiseta Blanca",
         precio: 150.00,
         cantidadDisponible: 10,
-        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/1.webp"
     },
     {
         id: 2,
         nombre: "Zapatos Deportivos",
         precio: 19.99,
         cantidadDisponible: 5,
-        imagen: "/main/img/3.jpeg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/2.jpeg"
     },
     {
         id: 3,
@@ -26,35 +26,35 @@ const productos = [
         nombre: "Gafas de Sol",
         precio: 120.99,
         cantidadDisponible: 7,
-        imagen: "/img/3.jpeg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/4.jpg"
     },
     {
         id: 5,
         nombre: "Reloj Deportivo",
         precio: 89.99,
         cantidadDisponible: 7,
-       imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+       imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/5.jpg"
     },
     {
         id: 6,
         nombre: "Auriculares Inalámbricos",
         precio: 59.99,
         cantidadDisponible: 7,
-        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/6.webp"
     },
     {
         id: 7,
         nombre: "Bolso de Mano",
         precio: 129.99,
         cantidadDisponible: 7,
-        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/7.webp"
     },
     {
         id: 8,
         nombre: "Producto 8",
         precio: 120.99,
         cantidadDisponible: 7,
-        imagen: "https://raw.githubusercontent.com/tu-usuario/tu-repositorio/rama/imagenes/producto8.jpg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/8.jpeg"
     }
     
 ];
@@ -154,4 +154,3 @@ document.getElementById('pagar').addEventListener('click', function() {
 
 // Inicializa la tienda
 renderizarProductos();
--------
