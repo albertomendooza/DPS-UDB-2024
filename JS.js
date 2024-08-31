@@ -139,18 +139,73 @@ function eliminarDelCarrito(productId) {
 }
 
 
+// Resto del código permanece igual
+
+// Nueva función para generar la factura
+function generarFactura() {
+    const facturaDiv = document.getElementById('factura');
+    facturaDiv.innerHTML = ''; // Limpiar cualquier factura anterior
+
+    const tituloFactura = document.createElement('h3');
+    tituloFactura.textContent = 'Factura de Compra';
+    facturaDiv.appendChild(tituloFactura);
+
+    const tabla = document.createElement('table');
+    tabla.className = 'table mt-3';
+
+    const encabezado = document.createElement('thead');
+    encabezado.innerHTML = `
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Total</th>
+        </tr>
+    `;
+    tabla.appendChild(encabezado);
+
+    const cuerpoTabla = document.createElement('tbody');
+
+    let totalFactura = 0;
+    carrito.forEach(producto => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${producto.nombre}</td>
+            <td>${producto.cantidad}</td>
+            <td>$${producto.precio.toFixed(2)}</td>
+            <td>$${(producto.precio * producto.cantidad).toFixed(2)}</td>
+        `;
+        cuerpoTabla.appendChild(fila);
+        totalFactura += producto.precio * producto.cantidad;
+    });
+
+    tabla.appendChild(cuerpoTabla);
+
+    const filaTotal = document.createElement('tr');
+    filaTotal.innerHTML = `
+        <td colspan="3" class="text-right font-weight-bold">Total</td>
+        <td class="font-weight-bold">$${totalFactura.toFixed(2)}</td>
+    `;
+    cuerpoTabla.appendChild(filaTotal);
+
+    facturaDiv.appendChild(tabla);
+}
+
+// Modificar el evento de clic en el botón "Pagar"
 document.getElementById('pagar').addEventListener('click', function() {
     if (carrito.length === 0) {
         alert('El carrito está vacío.');
         return;
     }
 
+    // Generar factura antes de limpiar el carrito
+    generarFactura();
+
     alert('Pago realizado con éxito.');
     carrito = [];
     actualizarCarrito();
     renderizarProductos();
 });
-
 
 // Inicializa la tienda
 renderizarProductos();
