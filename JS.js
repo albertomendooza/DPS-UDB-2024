@@ -5,56 +5,56 @@ const productos = [
         nombre: "Apple Mac",
         precio: 1499.99,
         cantidadDisponible: 10,
-        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/1.webp"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/img1.png"
     },
     {
         id: 2,
         nombre: "Apple iPhone",
         precio: 1259.99,
         cantidadDisponible: 5,
-        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/2.jpeg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/img2.png"
     },
     {
         id: 3,
         nombre: "Cámara Sony",
         precio: 89.99,
         cantidadDisponible: 7,
-       imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/3.jpeg"
+       imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/img3.png"
     },
     {
         id: 4,
         nombre: "Apple iPad",
         precio: 890.99,
         cantidadDisponible: 7,
-        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/4.jpg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/img4.png"
     },
     {
         id: 5,
         nombre: "Audífonos Sony",
         precio: 189.99,
         cantidadDisponible: 7,
-       imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/5.jpeg"
+       imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/img5.png"
     },
     {
         id: 6,
         nombre: "Samsung Galaxy S24 Ultra",
         precio: 1249.99,
         cantidadDisponible: 7,
-        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/6.webp"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/img6.png"
     },
     {
         id: 7,
         nombre: "Samsung Galaxy Z Flip5",
         precio: 849.99,
         cantidadDisponible: 7,
-        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/7.webp"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/img7.png"
     },
     {
         id: 8,
         nombre: "Samsung Galaxy S23 FE",
         precio: 520.99,
         cantidadDisponible: 7,
-        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/8.jpeg"
+        imagen: "https://raw.githubusercontent.com/albertomendooza/DPS-UDB-2024/main/img/img8.png"
     }
     
 ];
