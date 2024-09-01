@@ -62,7 +62,7 @@
     left: 50%;
     width: 120%;
     height: 120%;
-    background: rgba(8, 8, 8, 0.3);
+    background: rgba(125, 224, 229, 0.43);
     transform: translate(-50%, -50%) rotate(45deg);
     z-index: 1;
   }
